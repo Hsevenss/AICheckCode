@@ -1,0 +1,15 @@
+# 密钥配置（模板见 config.example.json）
+config.json
+
+# 运行时产物
+__pycache__/
+*.pyc
+*.log
+workspaces/
+
+# 备份与临时文件
+*.bak*
+_tmp_*
+
+# 本地工具目录
+.claude/

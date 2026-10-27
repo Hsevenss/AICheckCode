@@ -1,0 +1,48 @@
+{
+  "concurrency": 8,
+  "max_retries": 3,
+  "timeout": 300,
+  "log_level": "INFO",
+  "host": "0.0.0.0",
+  "port": 5000,
+  "debug": false,
+  "max_total_bytes": 300,
+  "diff_max_chars": 20000,
+  "llm_mode": "deepseek",
+  "deepseek": {
+    "api_key": "<你的 DeepSeek API Key>",
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-flash",
+    "thinking": false,
+    "max_tokens": 4000
+  },
+  "risk_strategy": {
+    "低": {"analysis_mode": "inline", "llm_mode": "deepseek", "scope": "focused", "concurrency": 8, "max_turns": 3},
+    "中": {"analysis_mode": "agent", "llm_mode": "sdk", "scope": "diff_related", "concurrency": 8, "max_turns": 10},
+    "高": {"analysis_mode": "agent", "llm_mode": "sdk", "scope": "full", "concurrency": 2, "max_turns": 10},
+    "unknown_as": "中",
+    "recheck": false
+  },
+  "webhook": {
+    "secrets": {
+      "gitee": "<你的 Gitee Webhook Secret>",
+      "gitlab": "",
+      "gitea": ""
+    },
+    "projects": [
+      {
+        "repo_url": "D:/vhr_probe",
+        "project_name": "vhr",
+        "test_case_file": "vhr_3.xlsx",
+        "branches": ["master"]
+      }
+    ]
+  },
+  "wechat_push": {
+    "enabled": true,
+    "serverchan_key": "<你的 Server酱 SendKey>",
+    "min_risk": "中",
+    "max_snippets": 3,
+    "snippet_max_chars": 1500
+  }
+}

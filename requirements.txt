@@ -1,0 +1,8 @@
+flask>=3.0.0
+flask-cors>=4.0.0
+claude-agent-sdk>=0.1.0
+openpyxl>=3.1.0
+tenacity>=8.2.0
+anyio>=4.0.0
+requests>=2.31.0
+waitress>=3.0.0
